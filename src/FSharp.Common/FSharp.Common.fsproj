@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Numaka.FSharp.Common</AssemblyName>
+    <RootNamespace>Numaka.FSharp.Common</RootNamespace>
+    <Version>1.0.0</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Description>FSharp common library</Description>
+    <!-- NuGet settings -->
+    <PackageId>Numaka.FSharp.Common</PackageId>
+    <PackageProjectUrl>https://github.com/AlbertoDePena/Common</PackageProjectUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/AlbertoDePena/Common</RepositoryUrl>
+  </PropertyGroup>
+  <Import Project="..\.paket\Paket.Restore.targets" />
+
+  <ItemGroup>
+    <Compile Include="Extensions.fs" />
+    <Compile Include="Types.fs" />
+    <None Include="paket.references" />
+  </ItemGroup>
+
+</Project>
