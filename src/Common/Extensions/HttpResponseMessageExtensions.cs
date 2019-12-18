@@ -2,7 +2,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Numaka.Common
+namespace Numaka.Common.Extensions
 {
     public static class HttpResponseMessageExtensions
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Numaka.Common
+namespace Numaka.Common.Extensions
 {
     /// <summary>
     /// ExceptionExtensions

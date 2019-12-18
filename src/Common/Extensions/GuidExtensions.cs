@@ -1,7 +1,7 @@
 using System;
 using System.Security.Cryptography;
 
-namespace Numaka.Common
+namespace Numaka.Common.Extensions
 {
     internal enum GuidTypes
     {
