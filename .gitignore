@@ -1,0 +1,7 @@
+**/.vs
+**/bin
+**/obj
+**/.ionide
+**/packages
+**/paket-files
+**/.fake
