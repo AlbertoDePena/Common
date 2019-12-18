@@ -4,11 +4,19 @@ using System.IO;
 
 namespace Numaka.Common.Logging
 {
+    /// <summary>
+    /// Logger
+    /// </summary>
     public class Logger : ILogger
     {
         private readonly Serilog.Core.Logger _logger;
         private bool _disposed;
 
+        /// <summary>
+        /// Log to console and file
+        /// </summary>
+        /// <param name="serviceName">The service name</param>
+        /// <param name="isDebugMode">When false, minimum log level is set to warning</param>
         public Logger(string serviceName, bool isDebugMode = false)
         {
             if (string.IsNullOrWhiteSpace(serviceName)) throw new ArgumentNullException(nameof(serviceName));
