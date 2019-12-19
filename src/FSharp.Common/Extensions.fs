@@ -46,9 +46,9 @@ module Async =
 
     let bind f x = async.Bind(x, f)
 
-    let retn x = async.Return x
+    let singleton x = async.Return x
 
-    let map f x = x |> bind (f >> retn)
+    let map f x = x |> bind (f >> singleton)
 
     /// Runs the asynchronous computation in a loop until 'Ctrl+C' is pressed.
     ///

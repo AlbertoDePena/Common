@@ -22,7 +22,7 @@ namespace Numaka.Logging
         {
             if (string.IsNullOrWhiteSpace(serviceName)) throw new ArgumentNullException(nameof(serviceName));
 
-            var filePath = $"{Directory.GetCurrentDirectory()}/Logs/{serviceName}.log";
+            var filePath = $"{Directory.GetCurrentDirectory()}/Logs/{serviceName}/logs.log";
 
             _logger =
                 (isDebugMode ? new LoggerConfiguration().MinimumLevel.Debug() : new LoggerConfiguration().MinimumLevel.Warning())
