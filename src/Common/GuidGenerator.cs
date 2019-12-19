@@ -1,7 +1,7 @@
 using System;
 using System.Security.Cryptography;
 
-namespace Numaka.Common.Extensions
+namespace Numaka.Common
 {
     internal enum GuidTypes
     {
@@ -13,39 +13,23 @@ namespace Numaka.Common.Extensions
     }
 
     /// <summary>
-    /// Guid Extensions
+    /// Guid Generator
     /// </summary>
-    public static class GuidExtensions
+    public class GuidGenerator : IGuidGenerator
     {
-        /// <summary>
-        /// New SQL Server GUID
-        /// </summary>
-        /// <param name="guid"></param>
-        /// <returns></returns>
-        public static Guid NewSqlServerGuid(this Guid guid) => NewGuid(GuidTypes.SqlServer);
+       /// <inheritdoc />
+        public Guid NewSqlServerGuid() => NewGuid(GuidTypes.SqlServer);
 
-        /// <summary>
-        /// New Oracle GUID
-        /// </summary>
-        /// <param name="guid"></param>
-        /// <returns></returns>
-        public static Guid NewOracleGuid(this Guid guid) => NewGuid(GuidTypes.Oracle);
+        /// <inheritdoc />
+        public Guid NewOracleGuid() => NewGuid(GuidTypes.Oracle);
 
-        /// <summary>
-        /// New My SQL GUID
-        /// </summary>
-        /// <param name="guid"></param>
-        /// <returns></returns>
-        public static Guid NewMySqlGuid(this Guid guid) => NewGuid(GuidTypes.MySql);
+        /// <inheritdoc />
+        public Guid NewMySqlGuid() => NewGuid(GuidTypes.MySql);
 
-        /// <summary>
-        /// New Postgres GUID
-        /// </summary>
-        /// <param name="guid"></param>
-        /// <returns></returns>
-        public static Guid NewPostgresGuid(this Guid guid) => NewGuid(GuidTypes.Postgres);
+        /// <inheritdoc />
+        public Guid NewPostgresGuid() => NewGuid(GuidTypes.Postgres);
 
-        private static Guid NewGuid(GuidTypes guidType)
+        private Guid NewGuid(GuidTypes guidType)
         {
             try
             {
