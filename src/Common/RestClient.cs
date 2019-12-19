@@ -8,6 +8,9 @@ using Numaka.Common.Extensions;
 
 namespace Numaka.Common
 {
+    /// <summary>
+    /// Rest Client
+    /// </summary>
     public class RestClient : IDisposable
     {
         private readonly HttpClient _httpClient;

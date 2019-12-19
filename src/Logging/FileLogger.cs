@@ -1,23 +1,24 @@
 ﻿using Serilog;
+using Serilog.Core;
 using System;
 using System.IO;
 
-namespace Numaka.Common.Logging
+namespace Numaka.Logging
 {
     /// <summary>
-    /// Logger
+    /// File Logger
     /// </summary>
-    public class Logger : ILogger
+    public class FileLogger : ILogger
     {
-        private readonly Serilog.Core.Logger _logger;
+        private readonly Logger _logger;
         private bool _disposed;
 
         /// <summary>
-        /// Log to console and file
+        /// Log to file
         /// </summary>
         /// <param name="serviceName">The service name</param>
         /// <param name="isDebugMode">When false, minimum log level is set to warning</param>
-        public Logger(string serviceName, bool isDebugMode = false)
+        public FileLogger(string serviceName, bool isDebugMode = false)
         {
             if (string.IsNullOrWhiteSpace(serviceName)) throw new ArgumentNullException(nameof(serviceName));
 
@@ -52,12 +53,12 @@ namespace Numaka.Common.Logging
         }
 
         /// <inheritdoc />
-        public void LogException(string message, Exception exception) => _logger.Error(exception, message);
+        public virtual void LogException(string message, Exception exception) => _logger.Error(exception, message);
 
         /// <inheritdoc />
-        public void LogMessage(string message) => _logger.Information(message);
+        public virtual void LogMessage(string message) => _logger.Information(message);
 
         /// <inheritdoc />
-        public void LogWarning(string message) => _logger.Warning(message);
+        public virtual void LogWarning(string message) => _logger.Warning(message);
     }
 }

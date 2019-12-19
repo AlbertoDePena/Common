@@ -2,7 +2,7 @@
 using System;
 using System.Security.Claims;
 
-namespace Numaka.Common.TokenValidator
+namespace Numaka.TokenValidator
 {
     /// <summary>
     /// Token validation result class

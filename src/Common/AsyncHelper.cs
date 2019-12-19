@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace Numaka.Common
 {
+    /// <summary>
+    /// Async helper
+    /// </summary>
     public static class AsyncHelper
     {
         private static readonly TaskFactory TaskFactory = new TaskFactory(CancellationToken.None, TaskCreationOptions.None, TaskContinuationOptions.None, TaskScheduler.Default);

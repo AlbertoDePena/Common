@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Numaka.Common.Logging
+namespace Numaka.Logging
 {
     /// <summary>
     /// ILogger

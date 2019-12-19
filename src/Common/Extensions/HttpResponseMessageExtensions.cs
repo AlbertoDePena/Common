@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace Numaka.Common.Extensions
 {
+    /// <summary>
+    /// HTTP Response Message Extensions
+    /// </summary>
     public static class HttpResponseMessageExtensions
     {
         /// <summary>

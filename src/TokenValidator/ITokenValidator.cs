@@ -1,4 +1,4 @@
-﻿namespace Numaka.Common.TokenValidator
+﻿namespace Numaka.TokenValidator
 {
     /// <summary>
     /// Token validator interface

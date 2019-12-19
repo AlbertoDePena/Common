@@ -4,8 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Numaka.Common</AssemblyName>
     <RootNamespace>Numaka.Common</RootNamespace>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>Common library</Description>
     <!-- NuGet settings -->
     <PackageId>Numaka.Common</PackageId>
@@ -15,8 +16,5 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/AlbertoDePena/Common</RepositoryUrl>
   </PropertyGroup>
-  <ItemGroup>
-    <Folder Include="Cryptography\" />
-  </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

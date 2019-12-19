@@ -12,14 +12,37 @@ namespace Numaka.Common.Extensions
         Postgres = 4
     }
 
+    /// <summary>
+    /// Guid Extensions
+    /// </summary>
     public static class GuidExtensions
     {
+        /// <summary>
+        /// New SQL Server GUID
+        /// </summary>
+        /// <param name="guid"></param>
+        /// <returns></returns>
         public static Guid NewSqlServerGuid(this Guid guid) => NewGuid(GuidTypes.SqlServer);
 
+        /// <summary>
+        /// New Oracle GUID
+        /// </summary>
+        /// <param name="guid"></param>
+        /// <returns></returns>
         public static Guid NewOracleGuid(this Guid guid) => NewGuid(GuidTypes.Oracle);
 
+        /// <summary>
+        /// New My SQL GUID
+        /// </summary>
+        /// <param name="guid"></param>
+        /// <returns></returns>
         public static Guid NewMySqlGuid(this Guid guid) => NewGuid(GuidTypes.MySql);
 
+        /// <summary>
+        /// New Postgres GUID
+        /// </summary>
+        /// <param name="guid"></param>
+        /// <returns></returns>
         public static Guid NewPostgresGuid(this Guid guid) => NewGuid(GuidTypes.Postgres);
 
         private static Guid NewGuid(GuidTypes guidType)

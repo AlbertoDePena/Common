@@ -44,6 +44,12 @@ module Async =
     open System
     open System.Threading
 
+    let bind f x = async.Bind(x, f)
+
+    let retn x = async.Return x
+
+    let map f x = x |> bind (f >> retn)
+
     /// Runs the asynchronous computation in a loop until 'Ctrl+C' is pressed.
     ///
     /// milliseconds: The number of milliseconds to sleep between each asynchronous computation execution.
@@ -134,7 +140,11 @@ module Console =
                 Console.ResetColor())
 
     let complete = log ConsoleColor.Magenta
+
     let ok = log ConsoleColor.Green
+
     let info = log ConsoleColor.Cyan
+
     let warn = log ConsoleColor.Yellow
+    
     let error = log ConsoleColor.Red

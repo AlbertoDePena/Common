@@ -10,6 +10,6 @@ nuget Serilog.Sinks.Console 3.1.1
 nuget Serilog.Sinks.File 4.1.0
 nuget Microsoft.IdentityModel.Protocols.OpenIdConnect 5.6.0
 nuget System.IdentityModel.Tokens.Jwt 5.6.0
-nuget Numaka.Common 1.0.1
+nuget Numaka.Common 1.0.2
 
 framework: netcore3.0, netstandard2.0, netstandard2.1
