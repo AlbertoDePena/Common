@@ -2,12 +2,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <AssemblyName>Numaka.Common.Tests</AssemblyName>
-    <RootNamespace>Numaka.Common.Tests</RootNamespace>
+    <AssemblyName>Numaka.Cryptography.Tests</AssemblyName>
+    <RootNamespace>Numaka.Cryptography.Tests</RootNamespace>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj" />
+    <ProjectReference Include="..\Cryptography\Cryptography.csproj" />
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

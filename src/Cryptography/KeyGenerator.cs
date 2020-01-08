@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography;
 
-namespace Numaka.Common.Cryptography
+namespace Numaka.Cryptography
 {
     public static class KeyGenerator
     {
