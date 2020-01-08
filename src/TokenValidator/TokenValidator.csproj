@@ -3,7 +3,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Numaka.TokenValidator</AssemblyName>
     <RootNamespace>Numaka.TokenValidator</RootNamespace>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>Token validator</Description>
@@ -15,5 +15,8 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/AlbertoDePena/Common</RepositoryUrl>
   </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
+  </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

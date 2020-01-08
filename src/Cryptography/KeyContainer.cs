@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Numaka.Common.Cryptography
+namespace Numaka.Cryptography
 {
     public class KeyContainer
     {

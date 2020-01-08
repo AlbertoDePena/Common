@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Numaka.Common.Cryptography
+namespace Numaka.Cryptography
 {
     public static class PasswordProvider
     {

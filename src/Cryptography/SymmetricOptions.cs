@@ -1,4 +1,4 @@
-﻿namespace Numaka.Common.Cryptography
+﻿namespace Numaka.Cryptography
 {
     public class SymmetricOptions : HmacOptions
     {

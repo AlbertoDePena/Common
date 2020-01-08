@@ -1,7 +1,7 @@
 ﻿using Xunit;
-using Numaka.Common.Cryptography;
+using Numaka.Cryptography;
 
-namespace Numaka.Common.Tests
+namespace Numaka.Cryptography.Tests
 {
     public class SignatureProviderTests
     {
