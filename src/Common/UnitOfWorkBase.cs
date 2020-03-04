@@ -3,7 +3,7 @@ using Numaka.Common.Contracts;
 using System;
 using System.Data;
 
-namespace Numaka.Common.Data
+namespace Numaka.Common
 {
     /// <summary>
     /// Unit of work base class
