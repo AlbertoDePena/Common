@@ -1,5 +1,6 @@
 using System;
 using System.Security.Cryptography;
+using Numaka.Common.Contracts;
 
 namespace Numaka.Common
 {
@@ -13,9 +14,9 @@ namespace Numaka.Common
     }
 
     /// <summary>
-    /// Guid Generator
+    /// Guid Factory
     /// </summary>
-    public class GuidGenerator : IGuidGenerator
+    public class GuidFactory : IGuidFactory
     {
        /// <inheritdoc />
         public Guid NewSqlServerGuid() => NewGuid(GuidTypes.SqlServer);

@@ -1,11 +1,11 @@
 using System;
 
-namespace Numaka.Common
+namespace Numaka.Common.Contracts
 {
     /// <summary>
-    /// GUID Generator Interface
+    /// GUID Factory Interface
     /// </summary>
-    public interface IGuidGenerator
+    public interface IGuidFactory
     {
         /// <summary>
         /// SQL Server GUID

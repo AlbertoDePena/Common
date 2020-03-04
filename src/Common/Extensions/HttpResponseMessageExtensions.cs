@@ -1,6 +1,6 @@
-using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Numaka.Common.Exceptions;
 
 namespace Numaka.Common.Extensions
 {
@@ -24,7 +24,7 @@ namespace Numaka.Common.Extensions
 
                 var message = $"StatusCode: {response.StatusCode}, StatusReason: {response.ReasonPhrase}";
 
-                throw new ApplicationException($"{message}\nContent: {json}");
+                throw new ApiException(message, content: json);
             }
         }
     }
