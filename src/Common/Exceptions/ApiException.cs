@@ -14,6 +14,11 @@ namespace Numaka.Common.Exceptions
         public string Content { get; }
 
         /// <summary>
+        /// The HTTP response
+        /// </summary>
+        public HttpResponseMessage Response { get; }
+
+        /// <summary>
         /// Constructor
         /// </summary>
         public ApiException() { }
@@ -36,9 +41,11 @@ namespace Numaka.Common.Exceptions
         /// </summary>
         /// <param name="message"></param>
         /// <param name="content"></param>
-        public ApiException(string message, string content) : base(message)
+        /// <param name="httpResponse"></param>
+        public ApiException(string message, string content, HttpResponseMessage httpResponse) : base(message)
         {
             Content = content;
+            Response = httpResponse;
         }
     }
 }

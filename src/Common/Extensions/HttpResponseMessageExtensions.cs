@@ -22,9 +22,7 @@ namespace Numaka.Common.Extensions
             {
                 var json = await content.ReadAsStringAsync();
 
-                var message = $"StatusCode: {response.StatusCode}, StatusReason: {response.ReasonPhrase}";
-
-                throw new ApiException(message, content: json);
+                throw new ApiException(message: response.ReasonPhrase, content: json, httpResponse: response);
             }
         }
     }
