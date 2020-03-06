@@ -16,6 +16,5 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/AlbertoDePena/Common</RepositoryUrl>
   </PropertyGroup>
-  <Import Project="..\.paket\Paket.Restore.targets" />
-
+  
 </Project>
