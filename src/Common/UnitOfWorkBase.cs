@@ -19,18 +19,10 @@ namespace Numaka.Common
         /// Constructor
         /// </summary>
         /// <param name="dbConnectionFactory"></param>
-        /// <param name="guidFactory"></param>
-        protected UnitOfWorkBase(IDbConnectionFactory dbConnectionFactory, IGuidFactory guidFactory)
+        protected UnitOfWorkBase(IDbConnectionFactory dbConnectionFactory)
         {
             _dbConnectionFactory = dbConnectionFactory ?? throw new ArgumentNullException(nameof(dbConnectionFactory));
-            GuidFactory = guidFactory ?? throw new ArgumentNullException(nameof(guidFactory));
         }
-
-        /// <summary>
-        ///     Preferred factory for generating new unique identifiers for entities.
-        /// </summary>
-        /// <remarks>Prefer this over using Guid.NewGuid()</remarks>
-        protected IGuidFactory GuidFactory { get; }
 
         /// <summary>
         ///     Commits all changes made by consumers of the DbTransaction within a single operation.
@@ -42,11 +34,18 @@ namespace Numaka.Common
             {
                 _dbTransaction?.Commit();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                _dbTransaction?.Rollback();
+                try
+                {
+                    _dbTransaction?.Rollback();
+                }
+                catch (Exception ex2)
+                {
+                    throw new RepositoryException(ex2.Message, ex2);
+                }
 
-                throw new RepositoryException(e.Message, e);
+                throw new RepositoryException(ex.Message, ex);
             }
         }
 

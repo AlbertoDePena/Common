@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 namespace Numaka.Common
 {
     /// <summary>
-    /// Async helper
+    /// This is a hack to get around executing async code from non-async context. Only use it when there is no other approach available.
+    /// See this article for more information...
+    /// https://docs.microsoft.com/en-us/archive/msdn-magazine/2015/july/async-programming-brownfield-async-development#the-blocking-hack
     /// </summary>
     public static class AsyncHelper
     {
