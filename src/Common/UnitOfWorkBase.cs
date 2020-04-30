@@ -2,6 +2,7 @@ using Numaka.Common.Exceptions;
 using Numaka.Common.Contracts;
 using System;
 using System.Data;
+using System.Threading.Tasks;
 
 namespace Numaka.Common
 {
@@ -55,6 +56,45 @@ namespace Numaka.Common
             catch (Exception ex)
             {
                 throw new RepositoryException(ex.Message, ex);
+            }
+        }
+
+        /// <summary>
+        /// Execute an async task and commit any changes.
+        /// Undo any changes if the task throws an exception.
+        /// </summary>
+        /// <param name="task"></param>
+        public async Task CommitOrUndoAsync(Func<Task> task)
+        {
+            try
+            {
+                await task();
+                Commit();
+            }
+            catch
+            {
+                Undo();
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Execute an async task and commit any changes.
+        /// Undo any changes if the task throws an exception.
+        /// </summary>
+        /// <param name="task"></param>
+        public async Task<T> CommitOrUndoAsync<T>(Func<Task<T>> task)
+        {
+            try
+            {
+                var result = await task();
+                Commit();
+                return result;
+            }
+            catch
+            {
+                Undo();
+                throw;
             }
         }
 
