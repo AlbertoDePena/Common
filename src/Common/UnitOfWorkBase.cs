@@ -36,15 +36,24 @@ namespace Numaka.Common
             }
             catch (Exception ex)
             {
-                try
-                {
-                    _dbTransaction?.Rollback();
-                }
-                catch (Exception ex2)
-                {
-                    throw new RepositoryException(ex2.Message, ex2);
-                }
+                Undo();
 
+                throw new RepositoryException(ex.Message, ex);
+            }
+        }
+
+        /// <summary>
+        ///     Undo all changes made by consumers of the DbTransaction within a single operation
+        /// </summary>
+        /// <exception cref="RepositoryException">Thrown when there is an error when trying to undo the database transaction</exception>
+        public void Undo()
+        {
+            try
+            {
+                _dbTransaction?.Rollback();
+            }
+            catch (Exception ex)
+            {
                 throw new RepositoryException(ex.Message, ex);
             }
         }
